@@ -1,8 +1,7 @@
 // import Painting from './Painting';
 
 import PaintingList from './PaintingList';
-
-// import paintings from './paintings.json';
+import Section from './Section';
 
 import paintings from '../paintings.json';
 
@@ -28,7 +27,11 @@ export const App = () => {
           price={painting.price}
         />
       ))} */}
-      <PaintingList items={paintings} />
+      {/* <PaintingList items={paintings} /> */}
+      <Section title="Топ недели">
+        <PaintingList items={paintings} />
+      </Section>
+      <Section />
       React homework template
     </div>
   );

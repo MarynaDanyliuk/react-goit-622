@@ -7,6 +7,7 @@ export default function Painting({
   title,
   price,
   author = `не известно`,
+  quantity,
   id,
 }) {
   return (
@@ -18,7 +19,10 @@ export default function Painting({
         Автор: <a href="">{author}</a>
       </p> */}
       <p>Цена: {price}</p>
-      <p>Доступность: заканчивается или есть в наличии</p>
+      <p>
+        Доступность: {quantity > 10 ? `заканчивается` : `есть в наличии`}
+        заканчивается или есть в наличии
+      </p>
       <button type="button">Добавить в корзину</button>
     </div>
   );
@@ -26,8 +30,10 @@ export default function Painting({
 
 // eslint-disable-next-line react/no-typos
 Painting.propTypes = {
-  url: PropTypes.string,
-  title: PropTypes.string,
-  author: PropTypes.string,
-  price: PropTypes.number,
+  url: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  quantity: PropTypes.number.isRequired,
+  // id: PropTypes.number.isRequired,
 };

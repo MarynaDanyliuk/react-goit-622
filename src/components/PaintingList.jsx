@@ -1,5 +1,6 @@
 // import PropTypes from 'prop-types';
 import Painting from './Painting';
+import PropTypes from 'prop-types';
 
 function PaintingList({ items }) {
   return (
@@ -20,11 +21,12 @@ function PaintingList({ items }) {
 }
 
 // eslint-disable-next-line react/no-typos
-// PaintingList.propTypes = {
-// //   url: PropTypes.string,
-// //   title: PropTypes.string,
-// //   author: PropTypes.string,
-// //   price: PropTypes.number,
-// };
+PaintingList.propTypes = {
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+    })
+  ),
+};
 
 export default PaintingList;
